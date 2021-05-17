@@ -9,11 +9,11 @@ class TestUntitled < Test::Unit::TestCase
     assert_equal items[0].name, "foo"
   end
 
-  def test_sulfuras
-    items = [Item.new("Sulfuras, Hand of Ragnaros", 0, 1)]
+  def test_sulfuras_quality_and_sell_in
+    items = [Item.new("Sulfuras, Hand of Ragnaros", 0, 80)]
     GildedRose.new(items).update_quality()
     assert_equal items[0].sell_in, 0
-    assert_equal items[0].quality, 1
+    assert_equal items[0].quality, 80
   end
 
   def test_negative_quality
